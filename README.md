@@ -24,6 +24,7 @@ usuário = rafael, senha = 123456;
 usuário = vitor, senha = 123456
 
 - Rodar o comando no diretório raiz
+
 npm install
 
 npm start
