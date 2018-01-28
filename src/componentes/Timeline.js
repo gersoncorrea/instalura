@@ -9,9 +9,13 @@ export default class Timeline extends Component{
         this.state = {fotos:[]};
     }
 
+    
+
     componentDidMount(){
         // requisição ajax
-        fetch('http://localhost:8080/api/public/fotos/rafael')
+        //fetch('http://localhost:8080/api/public/fotos/rafael')
+        // interpolando string
+        fetch(`http://localhost:8080/api/fotos?X-AUTH-TOKEN=${localStorage.getItem('auth-token')}`)
         .then(response => response.json())
         .then(fotos => {
             this.state({fotos: fotos});
@@ -25,7 +29,7 @@ export default class Timeline extends Component{
                 // transforma array de fotos em elementos
                 this.state
                 .fotos
-                .map(foto => <FotoItem foto={foto}/>)
+                .map(foto => <FotoItem key={foto.id} foto={foto}/>)
             }
             </div>
         )
