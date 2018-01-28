@@ -7,21 +7,38 @@ export default class Timeline extends Component{
     constructor(){
         super();
         this.state = {fotos:[]};
+        this.login = this.props.login;
     }
 
-    
+    carregaFotos(){
+        let urlPerfil;
+        if(this.login === undefined){
+            urlPerfil = `http://localhost:8080/api/fotos?X-AUTH-TOKEN=${localStorage.getItem('auth-token')}`;
+        } else {
+            urlPerfil = `http://localhost:8080/api/public/fotos/${this.login}`;
+        }
 
-    componentDidMount(){
-        // requisição ajax
-        //fetch('http://localhost:8080/api/public/fotos/rafael')
-        // interpolando string
-        fetch(`http://localhost:8080/api/fotos?X-AUTH-TOKEN=${localStorage.getItem('auth-token')}`)
+        fetch(urlPerfil)
         .then(response => response.json())
         .then(fotos => {
-            this.state({fotos: fotos});
-        })
+            this.setState({fotos: fotos});
+        });
+    }
+
+
+    componentDidMount(){
+        carregaFotos();
     }
     
+
+    // tem acesso a novas propriedades passadas para componente
+    componentWillReceiveProps(nexProps){
+        if(nextProps.login !== undefined){
+            this.login = nextProps.login;
+            this.carregaFotos();
+        }
+    }
+
     render(){
         return(
             <div className="fotos container">
