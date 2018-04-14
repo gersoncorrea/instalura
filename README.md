@@ -5,8 +5,10 @@
 O que é necessário
 
 > Node
->  Java 8
->  MySql
+
+> Java 8
+
+> MySql
 
 ### Instruções
 
