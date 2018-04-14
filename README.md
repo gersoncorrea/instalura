@@ -1,30 +1,32 @@
-Alura
+# Alura
 
-Curso React parte 2
+## Curso React parte 2
 
-- O que é necessário
--- Node
--- Java 8
--- MySql
+O que é necessário
 
-- Instruções
+> Node
+>  Java 8
+>  MySql
+
+### Instruções
 
  Executar
 
-java -jar instalura.jar.
+` java -jar instalura.jar `.
 
 ou
 
-java -jar -Dspring.datasource.password=suaSenhaAqui instalura.jar
+` java -jar -Dspring.datasource.password=suaSenhaAqui instalura.jar `
 
-Acesse o endereço http://localhost:8080/gera/dados para que a aplicação possa salvar os dados necessários para utilizarmos no Instalura.
+Acesse o endereço [http://localhost:8080/gera/dados](http://localhost:8080/gera/dados) para que a aplicação possa salvar os dados necessários para utilizarmos no Instalura.
 
-usuário = alots, senha = 123456;
-usuário = rafael, senha = 123456;
-usuário = vitor, senha = 123456
+> usuário = alots, senha = 123456;
+> usuário = rafael, senha = 123456;
+> usuário = vitor, senha = 123456
 
-- Rodar o comando no diretório raiz
+Rodar o comando no diretório raiz
 
-npm install
-
-npm start
+```
+$ npm install
+$ npm start
+```
