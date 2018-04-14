@@ -14,11 +14,11 @@ O que é necessário
 
  Executar
 
-` java -jar instalura.jar `.
+`$ java -jar instalura.jar `.
 
 ou
 
-` java -jar -Dspring.datasource.password=suaSenhaAqui instalura.jar `
+`$ java -jar -Dspring.datasource.password=suaSenhaAqui instalura.jar `
 
 Acesse o endereço [http://localhost:8080/gera/dados](http://localhost:8080/gera/dados) para que a aplicação possa salvar os dados necessários para utilizarmos no Instalura.
 
